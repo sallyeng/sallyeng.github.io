@@ -42,7 +42,7 @@ var voca = null
 var vocaGroupSize = 50
 
 function onLoadBody() {
-    lsCheckVocaKrToEn = new LSCheckbox(checkbox_kr_to_en, "voca_kr_to_en", true)
+    lsCheckVocaKrToEn = new LSCheckbox(checkbox_kr_to_en, "voca_kr_to_en", false)
     lsCheckVocaRandom = new LSCheckbox(checkbox_random, "vocal_random", false)
 }
 
@@ -98,7 +98,7 @@ function quiz() {
         div_status.innerText = "Random: " + randomStartIndex + "~" + randomEndIndex + ", remains:" + (randomQuizSlot.length)
     } else {
         voca = getNextVoca()
-        div_status.innerText = "Sequential: " + (new Number(currentIndex) + 1) + "/" + (vocas.length)
+        div_status.innerText = "Sequential: " + currentIndex + "/" + vocas.length
     }
 
     if( lsCheckVocaKrToEn.checked() ) {
